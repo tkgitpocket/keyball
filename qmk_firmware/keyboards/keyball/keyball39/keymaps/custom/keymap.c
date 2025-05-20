@@ -126,6 +126,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     keyball_set_scroll_mode(get_highest_layer(state) == 3);
 
     // ref:https://mazcon.hatenablog.com/entry/2023/11/10/080000
+    #if 0
     #ifdef POINTING_DEVICE_AUTO_MOUSE_ENABLE
     switch(get_highest_layer(remove_auto_mouse_layer(state, true))) {
         case 1:
@@ -136,6 +137,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             set_auto_mouse_enable(true);
             break;
     }
+    #endif
     #endif
 
     return state;
