@@ -23,66 +23,27 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // コンボキーの定義-S ref:https://note.com/mamelog0103/n/n5a51fcd24f26
 #ifdef COMBO_ENABLE
 enum combos{
-JQ_QUES,  // J + Q = ?
-JS_SING,  // J + S = ' (シングルクォーテーション)
-JW_DOUB,  // J + W = " (ダブルクォーテーション)
-JB_BOU,   // J + B = | (棒、パイプ)
-FP_PER,   // F + P = %
-JD_DOL,   // J + D = $
-FU_UNDER, // F + U = _ (アンダーバー)
-JA_AND,   // J + A = &
-FH_HUSH,  // F + H = #
-JE_EXCL,  // J + E = ! (エクスクラメーションマーク)
-FN_NAMI,  // F + N = ~
-JT_TASU,  // J + T = + (足す、プラス)
-FY_YAMA,  // F + Y = ^ (山、ハット)
-FK_KAKE,  // F + K = * (かける、アスタリスク)
-UI_UP,    // U + I = ↑ (U(↑)とその右隣)
-MC_DOWN,  // M + , = ↓ (M(↓)とその右隣)
-JK_LEFT,  // J + K = ← (J(←)とその右隣)
-KL_RIGHT, // K + L = → (K(→)とその右隣)
+JK_MC_BTN1,   // J + K = マウスボタン1（左クリック）
+KL_MC_BTN2,   // K + L = マウスボタン2（右クリック）
+MCOMMA_MC_BTN3,   // M + , = マウスボタン3（真ん中クリック）
+UI_MC_BTN4,   // U + I = マウスボタン4（戻るクリック）
+IO_MC_BTN5,   // I + O = マウスボタン5（進むクリック）
 FD_LAYER, // F + D = レイヤー4に移動
 };
 
-const uint16_t PROGMEM my_jq[] = {KC_J, KC_Q, COMBO_END};
-const uint16_t PROGMEM my_js[] = {KC_J, KC_S, COMBO_END};
-const uint16_t PROGMEM my_jw[] = {KC_J, KC_W, COMBO_END};
-const uint16_t PROGMEM my_jb[] = {KC_J, KC_B, COMBO_END};
-const uint16_t PROGMEM my_fp[] = {KC_F, KC_P, COMBO_END};
-const uint16_t PROGMEM my_jd[] = {KC_J, KC_D, COMBO_END};
-const uint16_t PROGMEM my_fu[] = {KC_F, KC_U, COMBO_END};
-const uint16_t PROGMEM my_ja[] = {KC_J, KC_A, COMBO_END};
-const uint16_t PROGMEM my_fh[] = {KC_F, KC_H, COMBO_END};
-const uint16_t PROGMEM my_je[] = {KC_J, KC_E, COMBO_END};
-const uint16_t PROGMEM my_fn[] = {KC_F, KC_N, COMBO_END};
-const uint16_t PROGMEM my_jt[] = {KC_J, KC_T, COMBO_END};
-const uint16_t PROGMEM my_fy[] = {KC_F, KC_Y, COMBO_END};
-const uint16_t PROGMEM my_fk[] = {KC_F, KC_K, COMBO_END};
-const uint16_t PROGMEM my_ui[] = {KC_U, KC_I, COMBO_END};
-const uint16_t PROGMEM my_mco[] = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM my_jk[] = {KC_J, KC_K, COMBO_END};
 const uint16_t PROGMEM my_kl[] = {KC_K, KC_L, COMBO_END};
+const uint16_t PROGMEM my_mcomma[] = {KC_M, KC_COMMA, COMBO_END};
+const uint16_t PROGMEM my_ui[] = {KC_U, KC_I, COMBO_END};
+const uint16_t PROGMEM my_io[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM my_fd[] = {KC_F, KC_D, COMBO_END};
 
 combo_t key_combos[] = {
-[JQ_QUES] = COMBO(my_jq, KC_QUES),
-[JS_SING] = COMBO(my_js, KC_QUOT),
-[JW_DOUB] = COMBO(my_jw, KC_DQUO),
-[JB_BOU] = COMBO(my_jb, KC_PIPE),
-[FP_PER] = COMBO(my_fp, KC_PERC),
-[JD_DOL] = COMBO(my_jd, KC_DLR),
-[FU_UNDER] = COMBO(my_fu, LSFT(KC_MINS)),
-[JA_AND] = COMBO(my_ja, KC_AMPR),
-[FH_HUSH] = COMBO(my_fh, KC_HASH),
-[JE_EXCL] = COMBO(my_je, KC_EXLM),
-[FN_NAMI] = COMBO(my_fn, KC_TILD),
-[JT_TASU] = COMBO(my_jt, KC_PLUS),
-[FY_YAMA] = COMBO(my_fy, KC_CIRC),
-[FK_KAKE] = COMBO(my_fk, LSFT(KC_8)),
-[UI_UP] = COMBO(my_ui, KC_UP),
-[MC_DOWN] = COMBO(my_mco, KC_DOWN),
-[JK_LEFT] = COMBO(my_jk, KC_LEFT),
-[KL_RIGHT] = COMBO(my_kl, KC_RGHT),
+[JK_MC_BTN1] = COMBO(my_jk, MS_BTN1),
+[KL_MC_BTN2] = COMBO(my_kl, MS_BTN2),
+[MCOMMA_MC_BTN3] = COMBO(my_mcomma, MS_BTN3),
+[UI_MC_BTN4] = COMBO(my_ui, MS_BTN4),
+[IO_MC_BTN5] = COMBO(my_io, MS_BTN5),
 [FD_LAYER] = COMBO(my_fd, MO(4)),
 };
 #endif
