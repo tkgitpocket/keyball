@@ -28,6 +28,7 @@ KL_MC_BTN2,   // K + L = マウスボタン2（右クリック）
 MCOMMA_MC_BTN3,   // M + , = マウスボタン3（真ん中クリック）
 UI_MC_BTN4,   // U + I = マウスボタン4（戻るクリック）
 IO_MC_BTN5,   // I + O = マウスボタン5（進むクリック）
+LMINUS_MC_BTN7,   // L + - = マウスボタン7（スクロール状態）
 FD_LAYER, // F + D = レイヤー4に移動
 };
 
@@ -36,6 +37,7 @@ const uint16_t PROGMEM my_kl[] = {KC_K, KC_L, COMBO_END};
 const uint16_t PROGMEM my_mcomma[] = {KC_M, KC_COMMA, COMBO_END};
 const uint16_t PROGMEM my_ui[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM my_io[] = {KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM my_lminus[] = {KC_L, KC_MINUS, COMBO_END};
 const uint16_t PROGMEM my_fd[] = {KC_F, KC_D, COMBO_END};
 
 combo_t key_combos[] = {
@@ -44,6 +46,7 @@ combo_t key_combos[] = {
 [MCOMMA_MC_BTN3] = COMBO(my_mcomma, KC_MS_BTN3),
 [UI_MC_BTN4] = COMBO(my_ui, KC_MS_BTN4),
 [IO_MC_BTN5] = COMBO(my_io, KC_MS_BTN5),
+[LMINUS_MC_BTN7] = COMBO(my_lminus, KC_MS_BTN7),
 [FD_LAYER] = COMBO(my_fd, MO(4)),
 };
 #endif
