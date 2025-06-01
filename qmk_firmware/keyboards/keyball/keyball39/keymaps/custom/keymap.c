@@ -39,11 +39,11 @@ const uint16_t PROGMEM my_io[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM my_fd[] = {KC_F, KC_D, COMBO_END};
 
 combo_t key_combos[] = {
-[JK_MC_BTN1] = COMBO(my_jk, MS_BTN1),
-[KL_MC_BTN2] = COMBO(my_kl, MS_BTN2),
-[MCOMMA_MC_BTN3] = COMBO(my_mcomma, MS_BTN3),
-[UI_MC_BTN4] = COMBO(my_ui, MS_BTN4),
-[IO_MC_BTN5] = COMBO(my_io, MS_BTN5),
+[JK_MC_BTN1] = COMBO(my_jk, KC_MS_BTN1),
+[KL_MC_BTN2] = COMBO(my_kl, KC_MS_BTN2),
+[MCOMMA_MC_BTN3] = COMBO(my_mcomma, KC_MS_BTN3),
+[UI_MC_BTN4] = COMBO(my_ui, KC_MS_BTN4),
+[IO_MC_BTN5] = COMBO(my_io, KC_MS_BTN5),
 [FD_LAYER] = COMBO(my_fd, MO(4)),
 };
 #endif
