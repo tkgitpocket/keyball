@@ -20,34 +20,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "quantum.h"
 
-// コンボキーの定義-S ref:https://note.com/mamelog0103/n/n5a51fcd24f26
-#ifdef COMBO_ENABLE
-enum combos{
-UI_MC_BTN4,   // U + I = マウスボタン4（戻るクリック）
-IO_MC_BTN5,   // I + O = マウスボタン5（進むクリック）
-IK_MC_BTN3,   // I + K = マウスボタン3（真ん中クリック）
-HJ_MC_ASTER,   // H + J = *（アスタリスク）
-JK_MC_COMMA,   // J + K = ,（カンマ）
-KL_MC_DOT,     // K + L = .（ドット）
-LMINUS_MC_UNDER,   // L + - = _（アンダーバー）
-NM_MC_PLUS,    // N + M = +（プラス）
-MBTN1_MC_SEMICOLON,  // M + BTN1 = ;（セミコロン）
-BTN12_MC_COLON,   // BTN1 + BTN2 = :（コロン）
-FD_LAYER, // F + D = レイヤー4に移動
-};
-
-const uint16_t PROGMEM my_ui[] = {KC_U, KC_I, COMBO_END};
-const uint16_t PROGMEM my_io[] = {KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM my_ik[] = {KC_I, KC_K, COMBO_END};
-const uint16_t PROGMEM my_hj[] = {KC_H, KC_J, COMBO_END};
-const uint16_t PROGMEM my_jk[] = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM my_kl[] = {KC_K, KC_L, COMBO_END};
-const uint16_t PROGMEM my_lminus[] = {KC_L, JP_MINS, COMBO_END};
-const uint16_t PROGMEM my_nm[] = {KC_N, KC_M, COMBO_END};
-const uint16_t PROGMEM my_mbtn1[] = {KC_M, KC_MS_BTN1, COMBO_END};
-const uint16_t PROGMEM my_btn12[] = {KC_MS_BTN1, KC_MS_BTN2, COMBO_END};
-const uint16_t PROGMEM my_fd[] = {KC_F, KC_D, COMBO_END};
-
 // https://github.com/qmk/qmk_firmware/blob/master/quantum/keymap_extras/keymap_japanese.h からコピペ
 // Start
 #define JP_ZKHK KC_GRV  // Zenkaku ↔ Hankaku ↔ Kanji (半角 ↔ 全角 ↔ 漢字)
@@ -126,6 +98,35 @@ const uint16_t PROGMEM my_fd[] = {KC_F, KC_D, COMBO_END};
 #define JP_QUES S(JP_SLSH) // ?
 #define JP_UNDS S(JP_BSLS) // _
 // End
+
+// コンボキーの定義-S ref:https://note.com/mamelog0103/n/n5a51fcd24f26
+#ifdef COMBO_ENABLE
+enum combos{
+UI_MC_BTN4,   // U + I = マウスボタン4（戻るクリック）
+IO_MC_BTN5,   // I + O = マウスボタン5（進むクリック）
+IK_MC_BTN3,   // I + K = マウスボタン3（真ん中クリック）
+HJ_MC_ASTER,   // H + J = *（アスタリスク）
+JK_MC_COMMA,   // J + K = ,（カンマ）
+KL_MC_DOT,     // K + L = .（ドット）
+LMINUS_MC_UNDER,   // L + - = _（アンダーバー）
+NM_MC_PLUS,    // N + M = +（プラス）
+MBTN1_MC_SEMICOLON,  // M + BTN1 = ;（セミコロン）
+BTN12_MC_COLON,   // BTN1 + BTN2 = :（コロン）
+FD_LAYER, // F + D = レイヤー4に移動
+};
+
+const uint16_t PROGMEM my_ui[] = {KC_U, KC_I, COMBO_END};
+const uint16_t PROGMEM my_io[] = {KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM my_ik[] = {KC_I, KC_K, COMBO_END};
+const uint16_t PROGMEM my_hj[] = {KC_H, KC_J, COMBO_END};
+const uint16_t PROGMEM my_jk[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM my_kl[] = {KC_K, KC_L, COMBO_END};
+const uint16_t PROGMEM my_lminus[] = {KC_L, JP_MINS, COMBO_END};
+const uint16_t PROGMEM my_nm[] = {KC_N, KC_M, COMBO_END};
+const uint16_t PROGMEM my_mbtn1[] = {KC_M, KC_MS_BTN1, COMBO_END};
+const uint16_t PROGMEM my_btn12[] = {KC_MS_BTN1, KC_MS_BTN2, COMBO_END};
+const uint16_t PROGMEM my_fd[] = {KC_F, KC_D, COMBO_END};
+
 combo_t key_combos[] = {
 [UI_MC_BTN4] = COMBO(my_ui, KC_MS_BTN4),
 [IO_MC_BTN5] = COMBO(my_io, KC_MS_BTN5),
