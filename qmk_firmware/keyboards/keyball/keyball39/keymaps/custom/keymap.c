@@ -26,30 +26,40 @@ enum combos{
 UI_MC_BTN4,   // U + I = マウスボタン4（戻るクリック）
 IO_MC_BTN5,   // I + O = マウスボタン5（進むクリック）
 IK_MC_BTN3,   // I + K = マウスボタン3（真ん中クリック）
-JK_MC_SEMICOLON,   // J + K = ;（セミコロン）
-KL_MC_KC_COLON,   // K + L = :（コロン）
-MBTN1_MC_PLUS,  // M + BTN1 = +（プラス）
-BTN12_MC_ASTER,   // BTN1 + BTN2 = *（アスタリスク）
+HJ_MC_ASTER,   // H + J = *（アスタリスク）
+JK_MC_COMMA,   // J + K = ,（カンマ）
+KL_MC_DOT,     // K + L = .（ドット）
+LMINUS_MC_UNDER,   // L + - = _（アンダーバー）
+NM_MC_PLUS,    // N + M = +（プラス）
+MBTN1_MC_SEMICOLON,  // M + BTN1 = ;（セミコロン）
+BTN12_MC_COLON,   // BTN1 + BTN2 = :（コロン）
 FD_LAYER, // F + D = レイヤー4に移動
 };
 
 const uint16_t PROGMEM my_ui[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM my_io[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM my_ik[] = {KC_I, KC_K, COMBO_END};
+const uint16_t PROGMEM my_hj[] = {KC_H, KC_J, COMBO_END};
 const uint16_t PROGMEM my_jk[] = {KC_J, KC_K, COMBO_END};
 const uint16_t PROGMEM my_kl[] = {KC_K, KC_L, COMBO_END};
+const uint16_t PROGMEM my_lminus[] = {KC_L, JP_MINS, COMBO_END};
+const uint16_t PROGMEM my_nm[] = {KC_N, KC_M, COMBO_END};
 const uint16_t PROGMEM my_mbtn1[] = {KC_M, KC_MS_BTN1, COMBO_END};
 const uint16_t PROGMEM my_btn12[] = {KC_MS_BTN1, KC_MS_BTN2, COMBO_END};
 const uint16_t PROGMEM my_fd[] = {KC_F, KC_D, COMBO_END};
 
+// 実際のキーコードは https://github.com/qmk/qmk_firmware/blob/master/quantum/keymap_extras/keymap_japanese.h を参照
 combo_t key_combos[] = {
 [UI_MC_BTN4] = COMBO(my_ui, KC_MS_BTN4),
 [IO_MC_BTN5] = COMBO(my_io, KC_MS_BTN5),
 [IK_MC_BTN3] = COMBO(my_ik, KC_MS_BTN3),
-[JK_MC_SEMICOLON] = COMBO(my_jk, KC_SEMICOLON),
-[KL_MC_KC_COLON] = COMBO(my_kl, KC_COLON),
-[MBTN1_MC_PLUS] = COMBO(my_mbtn1, KC_PLUS),
-[BTN12_MC_ASTER] = COMBO(my_btn12, KC_ASTERISK),
+[HJ_MC_ASTER] = COMBO(my_hj, JP_ASTR),
+[JK_MC_COMMA] = COMBO(my_jk, JP_COMM),
+[KL_MC_DOT] = COMBO(my_kl, JP_DOT),
+[LMINUS_MC_UNDER] = COMBO(my_lminus, JP_UNDS),
+[NM_MC_PLUS] = COMBO(my_kl, JP_PLUS),
+[MBTN1_MC_SEMICOLON] = COMBO(my_mbtn1, JP_SCLN),
+[BTN12_MC_COLON] = COMBO(my_btn12, JP_COLN),
 [FD_LAYER] = COMBO(my_fd, MO(4)),
 };
 #endif
