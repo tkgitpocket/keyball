@@ -106,12 +106,16 @@ UI_MC_BTN4,   // U + I = マウスボタン4（戻るクリック）
 IO_MC_BTN5,   // I + O = マウスボタン5（進むクリック）
 IK_MC_BTN3,   // I + K = マウスボタン3（真ん中クリック）
 HJ_MC_ASTER,   // H + J = *（アスタリスク）
-JK_MC_COMMA,   // J + K = ,（カンマ）
-KL_MC_DOT,     // K + L = .（ドット）
+//JK_MC_COMMA,   // J + K = ,（カンマ）
+JK_MC_SEMICOLON,   // J + K = ;（セミコロン）
+//KL_MC_DOT,     // K + L = .（ドット）
+KL_MC_COLON,     // K + L = :（コロン）
 LMINUS_MC_UNDER,   // L + - = _（アンダーバー）
 NM_MC_PLUS,    // N + M = +（プラス）
-MBTN1_MC_SEMICOLON,  // M + BTN1 = ;（セミコロン）
-BTN12_MC_COLON,   // BTN1 + BTN2 = :（コロン）
+//MBTN1_MC_SEMICOLON,  // M + BTN1 = ;（セミコロン）
+MBTN1_MC_CCOMMA,  // M + BTN1 = ,（カンマ）
+//BTN12_MC_COLON,   // BTN1 + BTN2 = :（コロン）
+BTN12_MC_DOT,   // BTN1 + BTN2 = .（ドット）
 FD_LAYER, // F + D = レイヤー4に移動
 };
 
@@ -127,17 +131,22 @@ const uint16_t PROGMEM my_mbtn1[] = {KC_M, KC_MS_BTN1, COMBO_END};
 const uint16_t PROGMEM my_btn12[] = {KC_MS_BTN1, KC_MS_BTN2, COMBO_END};
 const uint16_t PROGMEM my_fd[] = {KC_F, KC_D, COMBO_END};
 
+// 割当は https://zenn.dev/yoichi/articles/keymap-that-allow-recovery-from-layout-mismatch を参考に
 combo_t key_combos[] = {
 [UI_MC_BTN4] = COMBO(my_ui, KC_MS_BTN4),
 [IO_MC_BTN5] = COMBO(my_io, KC_MS_BTN5),
-[IK_MC_BTN3] = COMBO(my_ik, KC_MS_BTN3),
+[IK_MC_BTN3] = COMBO(my_ik, KC_MS_BTN3), // 割当試し中
 [HJ_MC_ASTER] = COMBO(my_hj, JP_ASTR),
-[JK_MC_COMMA] = COMBO(my_jk, JP_COMM),
-[KL_MC_DOT] = COMBO(my_kl, JP_DOT),
-[LMINUS_MC_UNDER] = COMBO(my_lminus, JP_UNDS),
-[NM_MC_PLUS] = COMBO(my_kl, JP_PLUS),
-[MBTN1_MC_SEMICOLON] = COMBO(my_mbtn1, JP_SCLN),
-[BTN12_MC_COLON] = COMBO(my_btn12, JP_COLN),
+//[JK_MC_COMMA] = COMBO(my_jk, JP_COMM),
+[JK_MC_SEMICOLON] = COMBO(my_jk, JP_SCLN),
+//[KL_MC_DOT] = COMBO(my_kl, KC_DOT), // 割当試し中
+[KL_MC_COLON] = COMBO(my_kl, JP_COLN), // 割当試し中
+[LMINUS_MC_UNDER] = COMBO(my_lminus, S(KC_INT1)), // 割当試し中
+[NM_MC_PLUS] = COMBO(my_kl, KC_PLUS), // 割当試し中
+//[MBTN1_MC_SEMICOLON] = COMBO(my_mbtn1, JP_SCLN),
+[MBTN1_MC_CCOMMA] = COMBO(my_mbtn1, JP_COMM),
+//[BTN12_MC_COLON] = COMBO(my_btn12, JP_COLN),
+[BTN12_MC_DOT] = COMBO(my_btn12, KC_DOT),
 [FD_LAYER] = COMBO(my_fd, MO(4)),
 };
 #endif
