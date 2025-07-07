@@ -224,3 +224,13 @@ void pointing_device_init_user(void) {
     set_auto_mouse_enable(true);
 }
 #endif
+
+// keymap.c で
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case MT(MOD_LCTL, KC_A):
+      return 400;  // Aキーだけholdを長くする
+    default:
+      return TAPPING_TERM;
+  }
+}
