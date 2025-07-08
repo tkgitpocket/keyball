@@ -136,13 +136,13 @@ combo_t key_combos[] = {
 [UI_MC_BTN4] = COMBO(my_ui, KC_MS_BTN4),
 [IO_MC_BTN5] = COMBO(my_io, KC_MS_BTN5),
 [IK_MC_BTN3] = COMBO(my_ik, KC_MS_BTN3), // 割当試し中
-[HJ_MC_ASTER] = COMBO(my_hj, JP_ASTR),
+[HJ_MC_ASTER] = COMBO(my_hj, KC_ENT), // テスト用：一時的にEnterに変更
 //[JK_MC_COMMA] = COMBO(my_jk, JP_COMM),
 [JK_MC_SEMICOLON] = COMBO(my_jk, JP_SCLN),
 //[KL_MC_DOT] = COMBO(my_kl, KC_DOT), // 割当試し中
 [KL_MC_COLON] = COMBO(my_kl, JP_COLN), // 割当試し中
 [LMINUS_MC_UNDER] = COMBO(my_lminus, S(KC_INT1)), // 割当試し中
-[NM_MC_PLUS] = COMBO(my_kl, KC_PLUS), // 割当試し中
+[NM_MC_PLUS] = COMBO(my_nm, KC_PLUS), // 割当試し中
 //[MBTN1_MC_SEMICOLON] = COMBO(my_mbtn1, JP_SCLN),
 [MBTN1_MC_CCOMMA] = COMBO(my_mbtn1, JP_COMM),
 //[BTN12_MC_COLON] = COMBO(my_btn12, JP_COLN),
@@ -229,7 +229,8 @@ void pointing_device_init_user(void) {
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case MT(MOD_LCTL, KC_A):
-      return 400;  // Aキーだけholdを長くする
+    case MT(MOD_LSFT, KC_Z):
+      return 400;  // holdを長くする
     default:
       return TAPPING_TERM;
   }

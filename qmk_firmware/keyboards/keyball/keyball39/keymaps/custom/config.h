@@ -40,6 +40,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 6 // レイヤー数追加
 
+// コンボキーのタイムアウト時間設定
+#define COMBO_TERM 100 // コンボキーのタイムアウト時間（ミリ秒）
+
 // ref:https://mazcon.hatenablog.com/entry/2023/11/10/080000
 #define POINTING_DEVICE_AUTO_MOUSE_ENABLE // 有効化
 #define AUTO_MOUSE_DEFAULT_LAYER 2 // 切り替えるマウスレイヤー番号を指定
