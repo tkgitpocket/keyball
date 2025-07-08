@@ -122,7 +122,7 @@ FD_LAYER, // F + D = レイヤー4に移動
 const uint16_t PROGMEM my_ui[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM my_io[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM my_ik[] = {KC_I, KC_K, COMBO_END};
-const uint16_t PROGMEM my_hj[] = {KC_H, KC_J, COMBO_END};
+const uint16_t PROGMEM my_as[] = {KC_A, KC_S, COMBO_END};
 const uint16_t PROGMEM my_jk[] = {KC_J, KC_K, COMBO_END};
 const uint16_t PROGMEM my_kl[] = {KC_K, KC_L, COMBO_END};
 const uint16_t PROGMEM my_lminus[] = {KC_L, JP_MINS, COMBO_END};
@@ -136,7 +136,7 @@ combo_t key_combos[] = {
 [UI_MC_BTN4] = COMBO(my_ui, KC_MS_BTN4),
 [IO_MC_BTN5] = COMBO(my_io, KC_MS_BTN5),
 [IK_MC_BTN3] = COMBO(my_ik, KC_MS_BTN3), // 割当試し中
-[HJ_MC_ASTER] = COMBO(my_hj, KC_ENT), // テスト用：一時的にEnterに変更
+[HJ_MC_ASTER] = COMBO(my_as, JP_ASTR), // A + S = *（アスタリスク）テスト用
 //[JK_MC_COMMA] = COMBO(my_jk, JP_COMM),
 [JK_MC_SEMICOLON] = COMBO(my_jk, JP_SCLN),
 //[KL_MC_DOT] = COMBO(my_kl, KC_DOT), // 割当試し中
@@ -234,4 +234,12 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     default:
       return TAPPING_TERM;
   }
+}
+
+// コンボキーデバッグ用
+void combo_event(uint8_t combo_index, bool pressed) {
+    if (pressed) {
+        // コンボキーが押された時の処理
+        // デバッグ用に何か出力したい場合はここに追加
+    }
 }
