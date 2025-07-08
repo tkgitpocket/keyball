@@ -42,8 +42,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // コンボキーのタイムアウト時間設定
 #define COMBO_TERM 200 // コンボキーのタイムアウト時間（ミリ秒）
-#define COMBO_MUST_HOLD_PER_COMBO
-#define COMBO_SHOULD_TRIGGER
 
 // ref:https://mazcon.hatenablog.com/entry/2023/11/10/080000
 #define POINTING_DEVICE_AUTO_MOUSE_ENABLE // 有効化
