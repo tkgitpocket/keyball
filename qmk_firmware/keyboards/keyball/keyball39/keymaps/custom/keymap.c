@@ -124,8 +124,9 @@ const uint16_t PROGMEM my_io[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM my_ik[] = {KC_I, KC_K, COMBO_END};
 const uint16_t PROGMEM my_hj[] = {KC_H, KC_J, COMBO_END};
 const uint16_t PROGMEM my_jk[] = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM my_hl[] = {KC_H, KC_L, COMBO_END}; // H+Lに変更
-const uint16_t PROGMEM my_lminus[] = {KC_L, JP_MINS, COMBO_END};
+// L は Mod-Tap (RCTL_T) のため、コンボではキーマップと同じキーコードを指定する
+const uint16_t PROGMEM my_kl[] = {KC_K, RCTL_T(KC_L), COMBO_END};   // K+L = :
+const uint16_t PROGMEM my_lminus[] = {RCTL_T(KC_L), JP_MINS, COMBO_END};
 const uint16_t PROGMEM my_nm[] = {KC_N, KC_M, COMBO_END};
 const uint16_t PROGMEM my_mbtn1[] = {KC_M, KC_MS_BTN1, COMBO_END};
 const uint16_t PROGMEM my_btn12[] = {KC_MS_BTN1, KC_MS_BTN2, COMBO_END};
@@ -140,7 +141,7 @@ combo_t key_combos[] = {
 //[JK_MC_COMMA] = COMBO(my_jk, JP_COMM),
 [JK_MC_SEMICOLON] = COMBO(my_jk, JP_SCLN),
 //[KL_MC_DOT] = COMBO(my_kl, KC_DOT), // 割当試し中
-[KL_MC_COLON] = COMBO(my_hl, JP_COLN), // H+L = :（コロン）
+[KL_MC_COLON] = COMBO(my_kl, JP_COLN), // K+L = :（コロン）
 [LMINUS_MC_UNDER] = COMBO(my_lminus, S(KC_INT1)), // 割当試し中
 [NM_MC_PLUS] = COMBO(my_nm, KC_PLUS), // 割当試し中
 //[MBTN1_MC_SEMICOLON] = COMBO(my_mbtn1, JP_SCLN),
@@ -157,7 +158,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default (VIA)
   [0] = LAYOUT_universal(
     KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     ,
-    KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                            KC_H     , KC_J     , KC_K     , KC_L     , KC_MINS  ,
+    KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                            KC_H     , KC_J     , KC_K     ,RCTL_T(KC_L), KC_MINS  ,
     KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  ,
     KC_LCTL  , KC_LGUI  , KC_LALT  ,LSFT_T(KC_LNG2),LT(1,KC_SPC),LT(3,KC_LNG1),KC_BSPC,LT(2,KC_ENT),LSFT_T(KC_LNG2),KC_RALT,KC_RGUI, KC_RSFT
   ),
